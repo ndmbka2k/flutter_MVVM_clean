@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mvvm_clean/presentation/resources/string_manager.dart';
 import 'package:flutter_mvvm_clean/presentation/splash/splash_screen.dart';
 
 class Routes {
@@ -34,11 +35,17 @@ class RouteGenerator {
   }
 
   static Route<dynamic> unDefinedRoute() {
-    return MaterialPageRoute(builder: (_) {
-      return Scaffold(
-        appBar: AppBar(title: const Text('No Route Found')),
-        body: const Center(child: Text('No Route Found')),
-      );
-    });
+    return MaterialPageRoute(
+      builder: (_) {
+        return Scaffold(
+          appBar: AppBar(
+            title: const Text(AppStrings.noRouteFound),
+          ),
+          body: const Center(
+            child: Text(AppStrings.noRouteFound),
+          ),
+        );
+      },
+    );
   }
 }
